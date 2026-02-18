@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>Helfer:innenfoemular</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="grid-container">
+
+    <!--Navigation format-->
+    <nav class="top-nav">
+      <div class="navigation-container">
+        <div class="left1"><a href="index.html">Start</a></div>
+        <div class="left2"><a href="lineup.html">Line-Up</a></div>
+        <div class="right1"><a href="helfer.html">Helfer:innen</a></div>
+        <div class="right2"><a href="impressum.html">Impressum</a></div>
+      </div>
+    </nav>
+
+    <!-- header -->
+    <header class="hero">
+      <div class="hero-content">
+        <h1 class="color-cycle">🎤 Helfer:innen gesucht!</h1>
+      </div>
+    </header>
+
+    <!-- LoginForm -->
+    <main class="helfer-form-wrapper">
+      <div class="form-text">
+        <h2>Melde dich als Helfer:in an</h2>
+      
+        <form id="loginForm" action="https://dummyjson.com/auth/login" method="post">
+          <label for="registername">Anmeldename: </label>
+          <input id="registername" type="text" name="username" required><br>
+          <label for="passwort">Passwort: </label>
+          <input id="passwort" type="password" name="password" required><br>
+          <input type="submit" value="Anmelden">
+        </form>
+
+        <div id="result" style="margin-top: 1em; font-family: monospace;"></div>
+      </div>
+    </main>
+
+    <!--Footer-->
+    <footer class="bottom-nav">
+      <div class="footer-container">
+        <div class="footer-left"><a href="impressum.html">Impressum</a></div>
+        <div class="footer-right"><a href="helfer.html">Helfer:innen</a></div>
+        <div class="footer-bottom">&copy; 2025 Rock am See Festival. All rights reserved.</div>
+      </div>
+    </footer>
+  </div>
+    
+  <script>
+      // Add an event listener that triggers when the form is submitted
+    document.getElementById("loginForm").addEventListener("submit",function(e){
+      //e.preventDefault();// Prevent default form submission (which reloads the page)
+
+      // Get the input values from the form
+      const user = document.getElementById("registername").value;
+      const pw = document.getElementById("passwort").value;
+
+      
+      // Send POST request to dummyjson.com login API
+      fetch('https://dummyjson.com/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          username: user,
+          password: pw,
+          expiresInMins: 30
+        })
+      })
+      .then(res => res.json())
+      .then(data => {
+        // Check if the response contains a token
+        if (data.token || data.accessToken) {
+          document.getElementById("result").innerHTML = `
+            <pre>
+            {
+              id: ${data.id}
+              username: "${data.username}"
+              email: "${data.email}"
+              firstName: "${data.firstName}"
+              lastName: "${data.lastName}"
+              gender: "${data.gender}"
+              image: "${data.image}"
+              token: "${data.token}"
+            }
+            </pre>
+          `;
+        } else {
+          document.getElementById("result").innerText = data.message;
+        } 
+      })
+      .catch(error => {
+        document.getElementById("result").innerText = "Fehler beim Login.";
+        console.error("Fehler:", error);
+      });
+  });
+  </script>
+
+</body>
+</html>
