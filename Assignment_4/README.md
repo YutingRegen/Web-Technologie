@@ -21,23 +21,7 @@ This is a feedback application for the event "Rock am See 2025". Users can submi
 
 ### How It Works
 
-* **Form Handling:** Users fill out the form with their feedback. Upon submission, the form data is stored in the Svelte store (`reviewsStore`) and in `localStorage`. This allows the feedback to persist across page refreshes.
-* **Rating System:** The user can provide a rating by clicking on stars. The rating is stored and displayed in the feedback cards.
-* **Card Display:** The submitted feedback is displayed as cards with the user's name, title, rating (stars), and experience content.
-* **Data Persistence:** The reviews data is automatically saved to `localStorage` whenever it is updated, allowing the data to persist even when the page is refreshed.
-
-## Team Members (T10)
-
-- Yuting Song
-- Juncheng Gong
-- Jiaying Jin
-- Yindan Ma
-
-```
-
-```
-
-```
-
-```
-
+- **Form Handling:** Users fill out the form with their feedback. Upon submission, the form data is stored in the Svelte store (`reviewsStore`) and in `localStorage`. This allows the feedback to persist across page refreshes.
+- **Rating System:** The user can provide a rating by clicking on stars. The rating is stored and displayed in the feedback cards.
+- **Card Display:** The submitted feedback is displayed as cards with the user's name, title, rating (stars), and experience content.
+- **Data Persistence:** The reviews data is automatically saved to `localStorage` whenever it is updated, allowing the data to persist even when the page is refreshed.

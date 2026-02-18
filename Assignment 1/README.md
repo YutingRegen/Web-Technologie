@@ -92,10 +92,3 @@ Form demo screenshot
 ![Form Demo Screenshot](assets/Form-demo.jpg)
 
 ---
-
-## Team Members (T10)
-
-- Yuting Song – Homepage
-- Juncheng Gong – lineup page
-- Jiaying Jin – helper page
-- Yindan Ma – Legal page

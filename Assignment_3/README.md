@@ -71,16 +71,3 @@ Gehe zu: [http://localhost:3001](http://localhost:3001)
 
 - Zeigt die Wolkenbedeckung (%) im zeitlichen Verlauf
 - Zeitachse basiert auf Zeitstempeln aus der JSON-Datei
-
----
-
-## Team Members (T10)
-
-- Yuting Song
-- Juncheng Gong
-- Jiaying Jin
-- Yindan Ma
-
-```
-
-```
