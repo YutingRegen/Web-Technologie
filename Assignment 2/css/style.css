@@ -1,0 +1,224 @@
+/* Dark background */
+body {
+    background-color: rgb(3, 3, 3);
+    padding-top: 60px;
+    height: auto;
+    width: auto;
+
+}
+
+ /* Orange navigation bar */
+.nav {
+    background-color: rgb(210, 138, 49);
+    font-weight: 500;
+    font-size: large;
+    padding-top: 15px;
+    text-align: center;
+    margin: auto;
+    height: 60px;
+}
+
+ul li {
+    width: auto;
+    padding-left: 5%;
+}
+
+/* Dark gray hover color for nav links */
+.nav a:hover {
+    color: rgb(63, 64, 64);;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(53, 18, 1);
+}
+
+
+#countdown {
+    background-color: rgb(63, 64, 64, 0.6);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: small;
+    text-align: center;
+    height: auto;
+    border-radius: 15px;
+    padding: 35px;
+    margin: 2cm;
+}
+
+h1 {
+    color: rgb(242, 187, 92);
+    font-size: 3 em;
+    text-align: center;
+}
+
+#time {
+    font-size: xx-large;
+    color: antiquewhite;
+    height: auto;
+    padding-top: 5px;
+}
+
+.day,.hour,.minute,.second {
+    padding:10px;
+    font-size: 2rem;
+}
+
+#info,
+#veranstaltung,
+#helfer {
+    background-color: rgb(63, 64, 64, 0.6);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: small;
+    text-align: center;
+    height: auto;
+    border-radius: 15px;
+    padding: 30px;
+    margin: 2cm;
+}
+
+.table {
+    --bs-table-bg: rgb(73, 72, 72, 0.6); /* Bootstrap custom background */
+    --bs-table-border-color :rgba(110, 108, 108, 0.6);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* Glow effect */
+    color: rgb(237, 171, 28);
+
+}
+
+ #text {
+    color: rgb(218, 200, 161);
+    font-size: large;
+    text-align: left; 
+    text-align: justify;
+ }   
+
+ .tabel-text {
+     margin: 10px;
+ }
+
+ .table td,
+ .table th {
+     text-align: center;
+     vertical-align: middle;
+ }
+
+ .table th {
+    background-color: rgb(50, 49, 49);
+    color: rgb(237, 171, 28);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+ }
+
+ .table td {
+    color: rgb(223, 177, 76);
+ }
+
+#selectsort {
+    background-color: rgb(237, 171, 28);
+    color: rgb(50, 49, 49);
+    margin-top:5px;
+    
+}
+
+.card {
+    background-color: rgb(63, 64, 64, 0.6);
+    margin-top: 5px;
+    color: rgb(237, 171, 28); 
+}
+
+.card table tr {
+    margin-bottom: 5px;
+    border: 5px,solid;
+    text-align: center ;
+}
+
+.card-body {
+    text-align: left;
+}
+
+.infoText {
+    font-size: medium;
+
+}
+
+/* General animation */
+
+:root {
+    /* general vars */
+    --three-dots__size: 100px;
+    --three-dots__color: rgb(247, 151, 7);
+    --three-dots__dot-diameter: calc(var(--three-dots__size) / 5);
+    --three-dots__dot-left-margin: calc(var(--three-dots__dot-diameter) / 2);
+
+    /* animation variables */
+    --three-dots__translateX-timing-function: cubic-bezier(0, 1, 1, 0);
+    --three-dots__opacity-timing-function: ease-in-out;
+    --three-dots__duration: 2s;
+}
+
+@keyframes three-dots__translateX {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes three-dots__appearDisappear {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    position: relative;
+}
+
+.three-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--debug-size-color);
+    width: var(--three-dots__size);
+    height: var(--three-dots__size);
+}
+
+.three-dots__dot {
+    background-color: var(--three-dots__color);
+    height: var(--three-dots__dot-diameter);
+    width: var(--three-dots__dot-diameter);
+    border-radius: var(--three-dots__dot-diameter);
+}
+
+.three-dots__dot+.three-dots__dot {
+    margin-left: var(--three-dots__dot-left-margin);
+}
+
+.three-dots__dot--first {
+    animation: three-dots__translateX var(--three-dots__duration) infinite 0.4s var(--three-dots__translateX-timing-function),
+        three-dots__appearDisappear var(--three-dots__duration) infinite 0.4s var(--three-dots__opacity-timing-function);
+}
+
+.three-dots__dot--second {
+    animation: three-dots__translateX var(--three-dots__duration) infinite 0.2s var(--three-dots__translateX-timing-function),
+        three-dots__appearDisappear var(--three-dots__duration) infinite 0.2s var(--three-dots__opacity-timing-function);
+}
+
+.three-dots__dot--third {
+    animation: three-dots__translateX var(--three-dots__duration) infinite 0s var(--three-dots__translateX-timing-function),
+        three-dots__appearDisappear var(--three-dots__duration) infinite 0s var(--three-dots__opacity-timing-function);
+}
